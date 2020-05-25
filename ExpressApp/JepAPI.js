@@ -29,7 +29,7 @@ app.put('/puzzles/:id', (req, res) => {
 });
 
 app.delete('/puzzles/:id', (req, res) => {
-    let jeppath = path.join(process.cwd(), "./Jeopardy/"+req.param["id"]);
+    let jeppath = path.join(process.cwd(), "./Jeopardy/"+req.params.id);
     if (fs.existsSync(jeppath)) {
         fs.unlinkSync(jeppath);
         res.json({success:true,errmsg:""});
